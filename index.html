@@ -250,6 +250,124 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/hello/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheyenne Rowe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/18679459?v=3&u=9c88b6a160ed398c08a7fb4c184c7d56a982cd3e&s=400">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheyenne">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/25/hello/" itemprop="url">
+                  hello
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T11:06:28+08:00">
+                2017-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>hello 625</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/13/js中的继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1458,149 +1576,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/26/MongoDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheyenne Rowe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/18679459?v=3&u=9c88b6a160ed398c08a7fb4c184c7d56a982cd3e&s=400">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheyenne">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/26/MongoDB/" itemprop="url">
-                  MongoDB
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-26T11:26:09+08:00">
-                2017-04-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">show dbs</div><div class="line">use demo</div><div class="line">db.dropDatabase()</div><div class="line">db.createCollection(&quot;user&quot;)</div><div class="line">show collections</div><div class="line">user = db.getCollection(&quot;user&quot;)</div><div class="line">user.insert(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find();//找到全部记录</div><div class="line">user.remove(&#123;name:&quot;ss&quot;&#125;)</div><div class="line">user.drop()</div><div class="line">//更新集合中的文档</div><div class="line">user.save(&#123;_id:ObjectId(&quot;55cc25b360bcee730bafd2bf&quot;),name:&quot;ZhangSan&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;name:&quot;ZhangSan&quot;,password:&quot;567890&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;$set: &#123;password:&quot;567890&quot;&#125;&#125;);//$set设置字段的值</div></pre></td></tr></table></figure>
-<p>nodejs有针对MongoDB的数据库驱动：mongodb</p>
-<h3 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h3><h4 id="创建一个连接"><a href="#创建一个连接" class="headerlink" title="创建一个连接"></a>创建一个连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(&apos;mongoose&apos;);</div><div class="line">mongoose.connect(&apos;mongodb://localhost/test&apos;);</div><div class="line"></div><div class="line">var db = mongoose.connection;</div><div class="line">db.on(&apos;error&apos;, console.error.bind(console, &apos;connection error:&apos;));</div><div class="line">db.once(&apos;open&apos;, function() &#123;</div><div class="line">  console.log(&quot;we&apos;re connected!&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>在Mongoose中，一切都是从Schema中衍生出来的，schema可以理解为表结构的定义，每个Schema会映射到mongodb的一个collection，它不具备操作数据库的能力。</p>
-<p>定义好了Schema，接下来由Schema生成Model。</p>
-<p>将Schema编译成Model，Model是一个类，每一条数据都是一个对象，它拥有在Schema中定义的属性和方法，可以对数据库操作。</p>
-<blockquote>
-<p>内置的Promises</p>
-</blockquote>
-<p>Mongoose的异步操作，比如：.save()和查询</p>
-<p>为了向后兼容，Mongoose4默认返回一个mpromise。</p>
-<p>Mongoose queries不是一个promise对象，但它确实有个.then()方法</p>
-<p>mongoose构建在mongodb上，提供了Schema、Model和Document对象，用起来更为方便。</p>
-<p>我们可以用Schema对象定义文档的结构（类似表结构），可以定义字段和类型、唯一性、索引和验证。Model对象表示集合中的所有文档。Document对象作为集合中的单个文档的表示。mongoose还有Query和Aggregate对象，Query实现查询，Aggregate实现聚合。</p>
-<h3 id="Nodejs连接MongoDB"><a href="#Nodejs连接MongoDB" class="headerlink" title="Nodejs连接MongoDB"></a>Nodejs连接MongoDB</h3><p>nodejs连接mongodb时，mongodb://localhost:27011/myproject1连接字符串中最后的表名如果在数据库里不存在会自动创建，如果没有指定数据库则MongoClient使用默认的<code>test</code>数据库</p>
-<h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var insertDocuments = function(db, callback) &#123;</div><div class="line">  // Get the documents collection</div><div class="line">  var collection = db.collection(&apos;documents&apos;);</div><div class="line">  // Insert some documents</div><div class="line">  collection.insertMany([</div><div class="line">    &#123;a : 1&#125;, &#123;a : 2&#125;, &#123;a : 3&#125;</div><div class="line">  ], function(err, result) &#123;</div><div class="line">    assert.equal(err, null);</div><div class="line">    assert.equal(3, result.result.n);</div><div class="line">    assert.equal(3, result.ops.length);</div><div class="line">    console.log(&quot;Inserted 3 documents into the collection&quot;);</div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>insert方法返回了一个对象，有如下三个属性：</p>
-<blockquote>
-<ul>
-<li><strong>result</strong> Contains the result document from MongoDB</li>
-<li><strong>ops</strong> Contains the documents inserted with added <strong>_id</strong> fields</li>
-<li><strong>connection</strong> Contains the connection used to perform the insert</li>
-</ul>
-</blockquote>
-<p>nodejs支持所有的MongoDB身份验证机制</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1650,7 +1625,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
