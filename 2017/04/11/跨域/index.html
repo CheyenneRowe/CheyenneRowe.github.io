@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨域 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="起源早期是为了防止CSRF攻击，浏览器引入了同源策略来提高安全性。 同源策略如下：    URL 说明 是否允许通信     http://www.a.com/a.js                                                     http://www.a.com/b.js 同一域名下 允许   http://www.a.com/lab/a.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/跨域/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="起源早期是为了防止CSRF攻击，浏览器引入了同源策略来提高安全性。 同源策略如下：    URL 说明 是否允许通信     http://www.a.com/a.js                                                     http://www.a.com/b.js 同一域名下 允许   http://www.a.com/lab/a.js">
+<meta property="og:updated_time" content="2017-05-12T13:45:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="起源早期是为了防止CSRF攻击，浏览器引入了同源策略来提高安全性。 同源策略如下：    URL 说明 是否允许通信     http://www.a.com/a.js                                                     http://www.a.com/b.js 同一域名下 允许   http://www.a.com/lab/a.js">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/跨域/" class="article-date">
+  <time datetime="2017-04-11T01:56:28.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>早期是为了防止CSRF攻击，浏览器引入了同源策略来提高安全性。</p>
+<p><strong>同源策略</strong>如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th>说明</th>
+<th style="text-align:center">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>同一域名下</td>
+<td style="text-align:center">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a>                                                 <a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td>
+<td>同一域名下不同文件夹</td>
+<td style="text-align:center">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a>                                               <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>同一域名，不同端口</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a></td>
+<td>同一域名，不同协议</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a></td>
+<td>域名和域名对应ip</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a></td>
+<td>主域相同，子域不同</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a></td>
+<td><strong>同一域名，不同二级域名（同上）</strong></td>
+<td style="text-align:center">不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a>                                               <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>不同域名</td>
+<td style="text-align:center">不允许</td>
+</tr>
+</tbody>
+</table>
+<p>浏览器在请求不同域的资源时，会因为同源策略的影响请求不成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/跨域/" data-id="cj4c46zp0000su42ym3j2zuqw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/24/typeof-instanceof/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          typeof &amp; instanceof
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/07/为什么说js中的Dom操作很慢/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">为什么说js中的Dom操作很慢</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

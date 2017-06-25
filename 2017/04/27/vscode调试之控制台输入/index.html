@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vscode调试之控制台输入 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自从开始看nodejs,深深感觉sublime在调试方面太不方便了，毕竟人家只是个编辑器啊你非要当IDE用@.@… Anyway，刚嫌弃完sublime的下一秒我就装了VSCode，相比VS2010简直小清新啊哈哈哈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode调试之控制台输入">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/vscode调试之控制台输入/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="自从开始看nodejs,深深感觉sublime在调试方面太不方便了，毕竟人家只是个编辑器啊你非要当IDE用@.@… Anyway，刚嫌弃完sublime的下一秒我就装了VSCode，相比VS2010简直小清新啊哈哈哈">
+<meta property="og:image" content="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/vscode%E8%B0%83%E8%AF%95.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/vscode_debug.jpg">
+<meta property="og:updated_time" content="2017-04-27T09:25:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vscode调试之控制台输入">
+<meta name="twitter:description" content="自从开始看nodejs,深深感觉sublime在调试方面太不方便了，毕竟人家只是个编辑器啊你非要当IDE用@.@… Anyway，刚嫌弃完sublime的下一秒我就装了VSCode，相比VS2010简直小清新啊哈哈哈">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/vscode%E8%B0%83%E8%AF%95.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vscode调试之控制台输入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/27/vscode调试之控制台输入/" class="article-date">
+  <time datetime="2017-04-27T08:50:16.000Z" itemprop="datePublished">2017-04-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vscode调试之控制台输入
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从开始看<code>nodejs</code>,深深感觉<code>sublime</code>在调试方面太不方便了，毕竟人家只是个编辑器啊你非要当IDE用@.@…</p>
+<p>Anyway，刚嫌弃完sublime的下一秒我就装了VSCode，相比VS2010简直小清新啊哈哈哈</p>
+<a id="more"></a>
+<p>然而中午刷了道题发现对于需要控制台输入的代码不造怎么调试。。只能在shell下默默地打印关键数据 ==！</p>
+<p><img src="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/vscode%E8%B0%83%E8%AF%95.png" alt=""></p>
+<p>可是这样也超不方便，哪儿哪儿都要<code>console.log</code>，有时候<code>console.log</code>大法下还是看不出具体bug在哪</p>
+<p>查了一下：</p>
+<blockquote>
+<p>Documentation indicates: “VSC Debug Console does not support programs that need to read input from the console, you can enable an external, native console by setting the attribute externalConsole to true in your launch configuration.”</p>
+</blockquote>
+<p>原来人家设计之初就是不支持从控制台读取输入的。。。</p>
+<p>按照文档里说的在<code>launch.json</code>里加入<code>&quot;externalConsole&quot;: true</code>，成功！</p>
+<p><img src="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/vscode_debug.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/27/vscode调试之控制台输入/" data-id="cj4c46zoh000gu42y1zrabdji" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/08/ejs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/26/postman/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">postman</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

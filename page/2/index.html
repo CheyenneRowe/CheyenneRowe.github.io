@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-postman" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/postman/" class="article-date">
+  <time datetime="2017-04-26T03:26:09.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/26/postman/">postman</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="multipart-form-data"><a href="#multipart-form-data" class="headerlink" title="multipart/form-data"></a><strong>multipart/form-data</strong></h3><p>http请求中的<code>multipart/form-data</code>,它会将表单的数据处理为一条消息，以标签为单元，用分隔符分开。既可以上传键值对，也可以上传文件。</p>
+<p>当上传的字段是文件时，会有<code>Content-Type</code>来说明文件类型；</p>
+<p><code>content-disposition</code>，用来说明字段的一些信息；</p>
+<p>由于有<code>boundary</code>隔离，所以<code>multipart/form-data</code>既可以上传文件，也可以上传键值对，所以可以上传多个文件。</p>
+<p><img src="" alt=""></p>
+<h3 id="application-x-www-from-urlencoded"><a href="#application-x-www-from-urlencoded" class="headerlink" title="application/x-www-from-urlencoded"></a><strong>application/x-www-from-urlencoded</strong></h3><p>将表单内的数据转换为键值对，比如:<code>name=Java&amp;age = 23</code></p>
+<p>只能上传键值对</p>
+<h3 id="binary"><a href="#binary" class="headerlink" title="binary"></a><strong>binary</strong></h3><p>相当于<strong><code>Content-Type:application/octet-stream</code></strong>, 只可以上传二进制数据，通常用来上传文件，由于没有键值，所以一次只能上传一个文件。</p>
+<p><a href="http://blog.csdn.net/wangjun5159/article/details/47781443" target="_blank" rel="external">原文</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/postman/" data-id="cj4c46zof000eu42y8kkr4di5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-FEQ" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/FEQ/" class="article-date">
+  <time datetime="2017-04-26T03:26:09.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/26/FEQ/">postman</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>iso七层</p>
+<p>应用层-表示层-会话层-传输层-网络层-数据链路层-物理层</p>
+</li>
+<li><p>tcp/ip四层</p>
+<p>应用层————-传输层-网络层-数据链路层</p>
+</li>
+<li><p>Promise：好像一个容器，保存着某个未来才会结束的事件结果（一个异步操作）。</p>
+<p>promise对象代表一个异步操作，其结果有三种状态：pending（进行中）、resolved（fulfilled已完成）、rejected（已失败）</p>
+<p>Promise对象实例.then()/catch()</p>
+<p>​</p>
+<p>异步执行函数，</p>
+<p>将原来的异步回调写法分离出来，在异步操作执行完后，用链式调用的方式执行回调函数。</p>
+<p>不然需要封装一个回调函数，当作参数传入需要异步执行的函数中去；但是如果有多层回调呢？如果回调本身又是一个异步操作，执行完也需要相应的回调函数，如果用老办法那就要封装N个回调函数，当作参数传给异步执行的函数中去。而用promise就可以在then方法中继续写promise对象并返回，继续调用then来进行回调操作。</p>
+<blockquote>
+<p> promise的精髓：<strong>状态</strong>，用维护状态，传递状态的方式来使回调函数能够及时调用</p>
+</blockquote>
+<p><code>resolve</code>函数：将Promise对象的状态从Pending变为Resolved，在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；</p>
+<p><code>reject</code>函数：将Promise对象的状态从Pending变为Rejected，在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<p><code>then()</code>可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为Resolved时调用，第二个回调函数是Promise对象的状态变为Reject时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。</p>
+<p>.catch(function(reason){})：两个作用：</p>
+<p>​    1.指定reject的回调函数。</p>
+<p>​    2.类似try/catch，可以捕获then方法中第一个参数（也就是异步函数执行resolve的回调函数）中的异常，reason就是异常信息，程序不会报错卡死，而是会进入到catch中</p>
+<p>.all([异步操作函数的数组]).then(function(results){})：可以并行执行多个异步函数，最终返回一个promise对象，多个异步操作的函数返回的数据放进一个数据传给then()，也就是results。应用场景：页面需要加载各种资源，都加载完后再进行页面的初始化。  等执行的最慢的异步函数执行完后执行回调。</p>
+<p>.race([异步操作函数的数组]).then(function(results){})：同all方法，只是all是等所有的异步操作完成再回调，也就是需要等最慢的执行完；race是最快的异步函数执行完后执行回调，当然，同时剩余的异步操作函数也在执行。</p>
+<p><code>Promise</code>也有一些缺点。首先，无法取消<code>Promise</code>，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，<code>Promise</code>内部抛出的错误，不会反应到外部。第三，当处于<code>Pending</code>状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+</li>
+<li><p>跨终端</p>
+</li>
+<li><p>移动端web app</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</code></p>
+</li>
+<li><p>svg</p>
+</li>
+<li><p>闭包的使用场景</p>
+<p>构造私有变量，使其不能在外部被随意更改，又可以通过指定的函数接口来操作，类似于私有变量的get、set方法</p>
+</li>
+<li><p>escape():对这些@ - _ + . /不编码，数字也不编码，返回的是字符的unicode编码值<br>decodeURI():特殊字符不编码，</p>
+<p>比如：<a href="http://www.haorooms.com/My%20first/" target="_blank" rel="external">http://www.haorooms.com/My%20first/</a></p>
+<p>decodeURIComponent() ：特殊字符也编码;</p>
+<p>比如：http%3A%2F%2Fwww.haorooms.com%2FMy%20first%2F</p>
+</li>
+<li><p>跨域：</p>
+<p>jsonp：只能get请求，因为是src里请求</p>
+</li>
+<li><p>bind()直接绑定在元素上，不人为地设置stopPropagation，就会一直向上冒泡触发所有祖先元素的该事件；不会绑定那些后来动态添加的元素；元素很多时会有效率问题。</p>
+<p>live()：$(‘a’).live(‘click’,function(){alert(‘That tickles!’)})  全部绑定到document上，当有事件冒泡到document上，就查看该事件是否发生在a上的click事件，是的话则执行。相比较bind()可以动态绑定，即使这个元素是后来新加进来的。</p>
+<p>delegate()：更精确的可以在小范围绑定事件，跟bind相比实现动态绑定，但仍然需要查找在哪个元素上发生了事件。</p>
+<p>​</p>
+</li>
+<li><p>三次握手</p>
+<p>建立TCP连接需要三次握手, 而断开连接需要执行四次挥手.</p>
+<p>三次握手: 首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK报文后也向Server段发生ACK报文，并分配资源，这样TCP连接就建立了。</p>
+<ul>
+<li>第一步: 客户机的TCP先向服务器的TCP<strong>发送一个连接请求报文</strong>. 这个特殊的报文中不含应用层数据, 其首部中的<strong>SYN标志位被置1</strong>. 另外, 客户机会随机选择一个起始序号<strong>seq=x</strong>(连接请求报文不携带数据,但要消耗掉一个序号)</li>
+<li>第二步: 服务器端的TCP收到连接请求报文后, 若同意建立连接, 就向客户机发送请求, 并为该TCP连接<strong>分配TCP缓存和变量</strong>. 在确认报文中,<strong>SYN和ACK位都被置为1</strong>, 确认号字段的值为<strong>x+1</strong>, 并且服务器随机产生起始序号<strong>seq=y</strong>(确认报文不携带数据, 但也要消耗掉一个序号). 确认报文同样不包含应用层数据.</li>
+<li>第三步: 当客户机收到确认报文后, 还要向服务器给出确认, 并且也要给<strong>该连接分配缓存和变量</strong>. 这个报文的<strong>ACK标志位被置为1</strong>, 序号字段为<strong>x+1</strong>, 确认号字段为<strong>y+1</strong></li>
+</ul>
+<p>四次挥手</p>
+<ul>
+<li>第一步: 客户机打算关闭连接,就向其TCP发送一个<strong>连接释放报文,</strong>并停止再发送数据,<strong>主动关闭TCP连接</strong>, 该报文的<strong>FIN标志位被置1, seq=u</strong>, 它等于前面已经传送过的数据的最后一个字节的序号加1(FIN报文即使不携带数据,也要消耗掉一个序号)</li>
+<li>第二步: 服务器接收连接释放报文后即发出确认, 确认号是<strong>ack=u+1</strong>, 这个<strong>报文自己的序号是v</strong>, 等于它前面已传送过的数据的最后一个自己的序号加1. 此时, 从客户机到服务器这个方向的连接就释放了, TCP连接处于<strong>半关闭状态</strong>. 但服务器若发送数据, 客户机仍要接收, 即从服务器到客户机的连接仍未关闭.</li>
+<li>第三步: 若服务器已经没有了要向客户机发送的数据, 就<strong>通知TCP释放连接</strong>, 此时其发出<strong>FIN=1</strong>的连接释放报文</li>
+<li>第四步: 客户机收到连接释放报文后, 必须发出确认. 在确认报文中, <strong>ACK字段被置为1</strong>, 确认号<strong>ack=w+1, 序号seq=u+1.</strong> 此时, TCP连接还没有释放掉, 必须经过等待计时器设置的时间2MSL后, A才进入到连接关闭状态.</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/FEQ/" data-id="cj4c46znx0003u42y6uhvt57o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/MongoDB/" class="article-date">
+  <time datetime="2017-04-26T03:26:09.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/26/MongoDB/">MongoDB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">show dbs</div><div class="line">use demo</div><div class="line">db.dropDatabase()</div><div class="line">db.createCollection(&quot;user&quot;)</div><div class="line">show collections</div><div class="line">user = db.getCollection(&quot;user&quot;)</div><div class="line">user.insert(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find();//找到全部记录</div><div class="line">user.remove(&#123;name:&quot;ss&quot;&#125;)</div><div class="line">user.drop()</div><div class="line">//更新集合中的文档</div><div class="line">user.save(&#123;_id:ObjectId(&quot;55cc25b360bcee730bafd2bf&quot;),name:&quot;ZhangSan&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;name:&quot;ZhangSan&quot;,password:&quot;567890&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;$set: &#123;password:&quot;567890&quot;&#125;&#125;);//$set设置字段的值</div></pre></td></tr></table></figure>
+<p>nodejs有针对MongoDB的数据库驱动：mongodb</p>
+<h3 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h3><h4 id="创建一个连接"><a href="#创建一个连接" class="headerlink" title="创建一个连接"></a>创建一个连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(&apos;mongoose&apos;);</div><div class="line">mongoose.connect(&apos;mongodb://localhost/test&apos;);</div><div class="line"></div><div class="line">var db = mongoose.connection;</div><div class="line">db.on(&apos;error&apos;, console.error.bind(console, &apos;connection error:&apos;));</div><div class="line">db.once(&apos;open&apos;, function() &#123;</div><div class="line">  console.log(&quot;we&apos;re connected!&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>在Mongoose中，一切都是从Schema中衍生出来的，schema可以理解为表结构的定义，每个Schema会映射到mongodb的一个collection，它不具备操作数据库的能力。</p>
+<p>定义好了Schema，接下来由Schema生成Model。</p>
+<p>将Schema编译成Model，Model是一个类，每一条数据都是一个对象，它拥有在Schema中定义的属性和方法，可以对数据库操作。</p>
+<blockquote>
+<p>内置的Promises</p>
+</blockquote>
+<p>Mongoose的异步操作，比如：.save()和查询</p>
+<p>为了向后兼容，Mongoose4默认返回一个mpromise。</p>
+<p>Mongoose queries不是一个promise对象，但它确实有个.then()方法</p>
+<p>mongoose构建在mongodb上，提供了Schema、Model和Document对象，用起来更为方便。</p>
+<p>我们可以用Schema对象定义文档的结构（类似表结构），可以定义字段和类型、唯一性、索引和验证。Model对象表示集合中的所有文档。Document对象作为集合中的单个文档的表示。mongoose还有Query和Aggregate对象，Query实现查询，Aggregate实现聚合。</p>
+<h3 id="Nodejs连接MongoDB"><a href="#Nodejs连接MongoDB" class="headerlink" title="Nodejs连接MongoDB"></a>Nodejs连接MongoDB</h3><p>nodejs连接mongodb时，mongodb://localhost:27011/myproject1连接字符串中最后的表名如果在数据库里不存在会自动创建，如果没有指定数据库则MongoClient使用默认的<code>test</code>数据库</p>
+<h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var insertDocuments = function(db, callback) &#123;</div><div class="line">  // Get the documents collection</div><div class="line">  var collection = db.collection(&apos;documents&apos;);</div><div class="line">  // Insert some documents</div><div class="line">  collection.insertMany([</div><div class="line">    &#123;a : 1&#125;, &#123;a : 2&#125;, &#123;a : 3&#125;</div><div class="line">  ], function(err, result) &#123;</div><div class="line">    assert.equal(err, null);</div><div class="line">    assert.equal(3, result.result.n);</div><div class="line">    assert.equal(3, result.ops.length);</div><div class="line">    console.log(&quot;Inserted 3 documents into the collection&quot;);</div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>insert方法返回了一个对象，有如下三个属性：</p>
+<blockquote>
+<ul>
+<li><strong>result</strong> Contains the result document from MongoDB</li>
+<li><strong>ops</strong> Contains the documents inserted with added <strong>_id</strong> fields</li>
+<li><strong>connection</strong> Contains the connection used to perform the insert</li>
+</ul>
+</blockquote>
+<p>nodejs支持所有的MongoDB身份验证机制</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/MongoDB/" data-id="cj4c46zo50007u42ywjjki08v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-formidable使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/node-formidable使用/" class="article-date">
+  <time datetime="2017-04-26T01:39:19.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/26/node-formidable使用/">node-formidable使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/node-formidable使用/" data-id="cj4c46zoc000cu42y4lg7q163" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-typeof-instanceof" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/24/typeof-instanceof/" class="article-date">
+  <time datetime="2017-04-24T02:04:57.000Z" itemprop="datePublished">2017-04-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/typeof-instanceof/">typeof &amp; instanceof</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/24/typeof-instanceof/" data-id="cj4c46zoh000fu42y9e8fr58i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/跨域/" class="article-date">
+  <time datetime="2017-04-11T01:56:28.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/跨域/">跨域</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>早期是为了防止CSRF攻击，浏览器引入了同源策略来提高安全性。</p>
+<p><strong>同源策略</strong>如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th>说明</th>
+<th style="text-align:center">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>同一域名下</td>
+<td style="text-align:center">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a>                                                 <a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td>
+<td>同一域名下不同文件夹</td>
+<td style="text-align:center">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a>                                               <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>同一域名，不同端口</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a></td>
+<td>同一域名，不同协议</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a></td>
+<td>域名和域名对应ip</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a></td>
+<td>主域相同，子域不同</td>
+<td style="text-align:center">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a>                                                     <a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a></td>
+<td><strong>同一域名，不同二级域名（同上）</strong></td>
+<td style="text-align:center">不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a>                                               <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td>不同域名</td>
+<td style="text-align:center">不允许</td>
+</tr>
+</tbody>
+</table>
+<p>浏览器在请求不同域的资源时，会因为同源策略的影响请求不成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/跨域/" data-id="cj4c46zp0000su42ym3j2zuqw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-为什么说js中的Dom操作很慢" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/07/为什么说js中的Dom操作很慢/" class="article-date">
+  <time datetime="2017-04-07T02:43:59.000Z" itemprop="datePublished">2017-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/07/为什么说js中的Dom操作很慢/">为什么说js中的Dom操作很慢</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    之前看到说操作<code>DOM</code>很慢，要尽量少的去操作<code>DOM</code>。当时没有细究，以致于有时候写js还是会纠结，是直接操作<code>DOM</code>还是处理数据后<code>refresh</code>好一点。今天看到一篇<a href="http://www.html5cn.org/article-9477-1.html" target="_blank" rel="external">文章</a>，虽然还没能完全消化但也是学到不少，顺带着还get了<code>Dev tools</code>下的<code>timeline</code>的正确使用方式，在这里稍微整理一下：</p>
+<blockquote>
+<p><strong>一张页面是如何呈现出来的</strong></p>
+</blockquote>
+<p>简单来说，就是：</p>
+<ol>
+<li>解析<code>HTML</code>，生成一棵<code>DOM tree</code></li>
+<li>解析<code>css</code>样式，结合<code>DOM tree</code>生成一棵<code>Render tree</code>。<br><code>render tree</code> 与<code>DOM tree</code>并不完全对应，一个简单的例子就是<code>display:none</code>的元素虽然存在于<code>DOM tree</code>中，但是因为不需要被绘制所以不会出现在<code>render tree</code>上。</li>
+<li>对<code>Render tree</code>的各个节点计算布局信息，比如<code>box</code>的位置与尺寸。</li>
+<li>利用浏览器的UI层对<code>Render tree</code>进行绘制。<br>在明确了页面的呈现过程后，有个问题就呼之欲出了，那就是：</li>
+</ol>
+<blockquote>
+<p><strong>什么因素会影响页面的渲染速度</strong></p>
+</blockquote>
+<p>事实上，<code>paint</code>就是一个耗时的过程，而第三点中的<code>layout</code>是一个更为耗时的过程。<br><code>layout</code>发生在页面渲染前，用来计算文档中<code>DOM</code>元素的位置和大小。第一次加载了<code>html</code>文档后就会进行<code>layout</code>操作，之后的<code>js</code>执行和<code>css</code>样式的改变也会触发浏览器去执行<code>layout</code>。甚至一次<code>layout</code>会牵涉到整个文档布局的重新计算。但是<code>layout</code>又无法避免，所以我们需要尽量少的去让游览器做<code>layout</code>。<br>一般情况下，浏览器的<code>layout</code>是<code>lazy</code>的，也就是说：在<code>js</code>脚本执行时，是不会去更新<code>DOM</code>的，任何对<code>DOM</code>的修改都会被暂存在一个队列中，在当前js的执行上下文完成执行后，会根据这个队列中的修改进行一次<code>layout</code>。然而有时候我们希望在js代码中立刻获取最新的<code>DOM</code>节点信息，这种情况下浏览器就不得不提前执行<code>layout</code>，这是导致<code>DOM</code>性能问题的主因。<br>一般来说，如下的操作会触发浏览器执行<code>layout</code>：</p>
+<ol>
+<li>通过<code>js</code>获取需要计算的<code>DOM</code>属性</li>
+<li>添加或删除<code>DOM</code>元素</li>
+<li><code>resize</code>浏览器窗口大小</li>
+<li>改变字体</li>
+<li><code>css</code>伪类的激活，比如<code>:hover</code></li>
+<li>通过<code>js</code>修改<code>DOM</code>元素样式且该样式涉及到尺寸的改变</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/07/为什么说js中的Dom操作很慢/" data-id="cj4c46zoi000hu42y2llsyoiz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-原型链看这一篇就够了" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/29/原型链看这一篇就够了/" class="article-date">
+  <time datetime="2017-03-29T06:41:38.000Z" itemprop="datePublished">2017-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/29/原型链看这一篇就够了/">原型链里那些奇怪的对象属性都是什么</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结一下原型链里的一些基本概念：</p>
+<p><strong>首先</strong>我们要明确<code>prototype</code>和<code>__proto__</code>：</p>
+<ul>
+<li><p>每个函数都有一个<strong>原型对象</strong>属性：<code>prototype</code>，它包含两个成员属性：<code>constructor</code>&amp;<code>__proto__</code></p>
+</li>
+<li><p>每个对象都有一个隐藏的<code>__proto__</code>属性，它引用了创建该对象的函数的<code>prototype</code>，即：</p>
+<p><code>foo.__proto__ === Foo.prototype</code>，这里的<code>__proto__</code>成为”隐式原型”。</p>
+</li>
+</ul>
+<h4 id="自定义函数的prototype"><a href="#自定义函数的prototype" class="headerlink" title="自定义函数的prototype"></a>自定义函数的prototype</h4><p>我们已经说过自定义函数都有一个原型对象属性，那 <code>Foo.prototype</code>就应该也有<code>__proto__</code>属性才对，那它的<code>__proto__</code>又是什么呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function Foo()&#123;&#125;</div><div class="line">Foo.prototype.__proto__ === Object.prototype;</div></pre></td></tr></table></figure>
+<p>自定义函数<code>Foo</code>的<code>prototype</code>本质上跟<code>var obj= {}</code>一样都是被<code>Object</code>创建的，所以它的<code>__proto__</code>指向<code>Object.prototype</code></p>
+<h4 id="自定义函数的-proto"><a href="#自定义函数的-proto" class="headerlink" title="自定义函数的__proto__"></a>自定义函数的<code>__proto__</code></h4><p>自定义函数也是一种对象呀，所以它肯定也有<code>__proto__</code>属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function Foo()&#123;&#125;</div><div class="line">Foo.__proto__ === Function.prototype;</div></pre></td></tr></table></figure>
+<p>为什么呢？想想一般我们怎么创建函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Foo(x,y)&#123;</div><div class="line">	return x+y;</div><div class="line">&#125;</div><div class="line">或者（虽然下面这种方式我们不推荐）：</div><div class="line">var Foo = new Function(&quot;x&quot;,&quot;y&quot;,&quot;return x+y;&quot;)</div></pre></td></tr></table></figure>
+<p>可以看出，函数<code>Foo</code>是被<code>Function</code>创建出来的，所以<code>Foo</code>的<code>__proto__</code>指向<code>Function</code>的<code>prototype</code></p>
+<p>同理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.__proto__ === Function.prototype</div></pre></td></tr></table></figure>
+<h4 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h4><p>再看一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj  = &#123;&#125;;  // obj本质上是被Object函数创建的, var obj = new Object();</div><div class="line">obj.__proto__ === Object.prototype;</div></pre></td></tr></table></figure>
+<p>同样，<code>Object.prototype</code>也是一个对象，那么它的<code>__proto__</code>对象又是什么呢？</p>
+<p>这里需要注意的是：<strong><code>Object.prototype</code>的<code>__proto__</code>指向的是<code>null</code></strong></p>
+<h4 id="Object的-proto"><a href="#Object的-proto" class="headerlink" title="Object的__proto__"></a>Object的__proto__</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.__proto__ === Function.prototype</div></pre></td></tr></table></figure>
+<p>最后贴一张图：</p>
+<p><img src="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/%E5%8E%9F%E5%9E%8B%E9%93%BE.png" alt="原型链"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/29/原型链看这一篇就够了/" data-id="cj4c46zon000ju42y9pb63yfv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS构造函数知多少" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/28/JS构造函数知多少/" class="article-date">
+  <time datetime="2017-03-28T06:13:15.000Z" itemprop="datePublished">2017-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/28/JS构造函数知多少/">JS构造函数知多少</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近看了一些原型链的文章，发现对于经常在用的构造函数还是有一些模糊的地方，在这里稍微整理一下：<br>任何使用<code>new</code>关键字调用的函数都可当做是构造函数，命名规则上一般是首字母大写（普通函数采用驼峰命名法）<br>一个真正意义上的构造函数一般满足两个条件：</p>
+<ol>
+<li>在函数内部为新对象的属性和方法赋值；</li>
+<li>构造函数可以包含return，虽然不推荐。</li>
+</ol>
+<p>先来看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function Bar() &#123;</div><div class="line">    return 2;</div><div class="line">&#125;</div><div class="line">new Bar(); // a new object：&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>再来一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Test() &#123;</div><div class="line">    this.value = 2;</div><div class="line">    return &#123;</div><div class="line">        foo: 1</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">new Test(); // the returned object:&#123;foo:1&#125;</div></pre></td></tr></table></figure></p>
+<p>恩毫无压力？那再来一个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Foo(a, b)&#123;</div><div class="line">    this.p = a + b;</div><div class="line">    this.alertP = function()&#123;</div><div class="line">        alert(this.p);</div><div class="line">    &#125;</div><div class="line">    return this.p;//此返回语句在Foo作为构造函数时没有意义</div><div class="line">&#125;</div><div class="line">var foo = new Foo(2,3); //foo:&#123;p:5;alertP:function()&#123;alert(this.p)&#125;&#125;</div><div class="line">foo.alertP();//结果为5</div><div class="line">alert(Foo(2, 3)); //结果为5</div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/constructor.png" alt="result"></p>
+<p>上述的例子说明了构造函数的返回值：</p>
+<ul>
+<li>有默认的返回值，即新创建的对象实例；</li>
+<li>手动添加的返回值：<ul>
+<li>基本数据类型：真正返回的是新创建的一个对象实例；</li>
+<li>引用类型：返回的是该对象。</li>
+</ul>
+</li>
+</ul>
+<p>那么使用new关键字到底发生了什么呢？其实就是四件事：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj  =&#123;&#125;;   //创建一个空对象obj</div><div class="line">obj.__proto__ = Foo.prototype;  //将这个空对象obj的__proto__成员指向构造函数Foo的prototype成员对象</div><div class="line">Foo.call(obj); //将构造函数中的this对象赋给新对象</div><div class="line">return obj; //返回新对象obj</div></pre></td></tr></table></figure></p>
+<p>其中第三行js高程是这么解释的：</p>
+<blockquote>
+<p>将构造函数的作用域赋给新对象</p>
+</blockquote>
+<p>看不懂==! 于是查了下原版：</p>
+<blockquote>
+<p>Assign the this value of the constructor to the new object (so this points to the new object)</p>
+</blockquote>
+<p>哦原来是说将构造函数中的this对象赋给新对象（所以this指向了新对象）</p>
+<p>get !<br>@.@</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/28/JS构造函数知多少/" data-id="cj4c46zo10005u42ydhbs7oui" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于vertical-align和line-height的一些理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/25/关于vertical-align和line-height的一些理解/" class="article-date">
+  <time datetime="2017-03-25T07:42:44.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/25/关于vertical-align和line-height的一些理解/">关于vertical-align和line-height的一些理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前几天看<code>flex</code>布局又温习了下css的基础知识，果不其然又扫到了知识盲点，首当其冲的就是<code>vertical-align</code>和<code>line-height</code>。<br>恩感觉css其实是很有魅力的一个东西，就是你很容易入门自己写点东西出来，但是我敢说这种程度都是伴随着写代码时对一些属性取值的试探，哎这样没有效果？那试试这个。。。要达到对每个属性的表现都了然于胸还是要花些心思的。<br>先起个头吧，感觉有的地方还是很模糊，慢慢来完善。</p>
+<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><p>先看一下css标准里对于<code>line-height</code>的解释：</p>
+<blockquote>
+<p>This property affects the vertical positioning inside a line box of the boxes generated by an inline-level element.</p>
+<p>用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。</p>
+</blockquote>
+<p><strong>取值（相对于<code>inline</code>元素）</strong></p>
+<ul>
+<li><code>baseline</code><br>元素基线与父元素的基线对齐。</li>
+<li><code>sub</code><br>元素基线与父元素的下标基线对齐。</li>
+<li><code>super</code><br>元素基线与父元素的上标基线对齐。</li>
+<li><code>text-top</code><br>元素顶端与父元素字体的顶端对齐。</li>
+<li><code>text-bottom</code><br>元素底端与父元素字体的底端对齐。</li>
+<li><code>middle</code><br>元素中线与父元素的小写x中线对齐。</li>
+<li><code>&lt;length&gt;</code><br>元素基线超过父元素的基线指定高度。可以取负值。</li>
+<li><code>&lt;percentage&gt;</code><br>同 <code>&lt;length&gt;</code> ,<code>vertical-align</code>的百分比值不是相对于字体大小或者其他什么属性计算的，而是相对于<code>line-height</code>计算的。</li>
+</ul>
+<p>以下两个值是相对于整行来说的：</p>
+<ul>
+<li><code>top</code><br> 元素及其后代的顶端与整行的顶端对齐。</li>
+<li><code>bottom</code><br>元素及其后代的底端与整行的底端对齐。</li>
+</ul>
+<p>如果元素没有基线baseline，则以它的外边距的下边缘为基线。</p>
+<p>当我们将图片内容和文字对齐时，默认是下边缘对齐，但是这样往往在下边会多出一个小空白行，这是因为块级元素内部的内联元素默认的垂直对齐方式是基线对齐（基线我的理解是英文字母书写中第三根线的位置（简直词穷==!），于是就会出现一个小空行，它的高度为文字的行高超出文字基线的距离。消除这个小空行的办法如下：</p>
+<ol>
+<li><p>让<code>vertical-align</code>失效<br>图片默认是<code>inline</code>水平的，<code>vertical-align</code>对块状水平的元素无感，所以只要让图片由默认的<code>inline</code>变成<code>block</code>就可以了。·</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">	display:block;//默认是inline</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>vertical-align</code>赋其它值，默认是<code>baseline</code>对齐，改成<code>top/middle/bottom</code>即可。</p>
+</li>
+<li><p><strong>修改<code>line-height</code>的值：</strong></p>
+<p>下面的空隙高度实际上是文字的行高超出文字基线的距离，因此只要行高足够小，行高在基线的上边，自然没有空隙。</p>
+</li>
+<li><p>父元素设置<code>font-size：0</code></p>
+</li>
+</ol>
+<p>作为上述内容的扩展，我们可以用<code>vertical-align和</code>和<code>line-height</code>实现任意尺寸的图片垂直居中的效果。</p>
+<h2 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h2><p>css标准里对于<code>line-height</code>的解释：</p>
+<blockquote>
+<p>On a block container element whose content is composed of inline-level elements, ‘line-height’ specifies the minimal height of line boxes within the element.</p>
+<p>On a non-replaced inline element, ‘line-height’ specifies the height that is used in the calculation of the line box height.</p>
+<p>在一个块级容器中，如果它包含若干内联元素，则块级元素的<code>line-height</code>指定了内部<code>line-boxes</code>的最小高度。</p>
+<p>对于非替代的行内元素，<code>line-height</code>用来计算<code>line box</code>(行内框)的高度。</p>
+</blockquote>
+<p><code>line-height</code>具有继承性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/25/关于vertical-align和line-height的一些理解/" data-id="cj4c46zoj000iu42yinr8gwce" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

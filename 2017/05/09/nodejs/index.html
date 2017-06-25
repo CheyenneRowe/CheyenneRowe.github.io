@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="nodejs和javascript差异 js中的顶层对象：window node中顶层对象：global  nodejs中的模块一个文件就是一个模块，每个模块都有自己的作用域。我们使用var来声明的变量并不是全局的，而是属于当前模块下。 1234## index.jsvar a = 100;global.a = 200;console.log(a);   //100 __filename:当前文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/05/09/nodejs/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nodejs和javascript差异 js中的顶层对象：window node中顶层对象：global  nodejs中的模块一个文件就是一个模块，每个模块都有自己的作用域。我们使用var来声明的变量并不是全局的，而是属于当前模块下。 1234## index.jsvar a = 100;global.a = 200;console.log(a);   //100 __filename:当前文件">
+<meta property="og:updated_time" content="2017-05-10T08:59:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="nodejs和javascript差异 js中的顶层对象：window node中顶层对象：global  nodejs中的模块一个文件就是一个模块，每个模块都有自己的作用域。我们使用var来声明的变量并不是全局的，而是属于当前模块下。 1234## index.jsvar a = 100;global.a = 200;console.log(a);   //100 __filename:当前文件">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/09/nodejs/" class="article-date">
+  <time datetime="2017-05-09T03:05:23.000Z" itemprop="datePublished">2017-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="nodejs和javascript差异"><a href="#nodejs和javascript差异" class="headerlink" title="nodejs和javascript差异"></a>nodejs和javascript差异</h4><ol>
+<li>js中的顶层对象：window</li>
+<li>node中顶层对象：global</li>
+</ol>
+<h4 id="nodejs中的模块"><a href="#nodejs中的模块" class="headerlink" title="nodejs中的模块"></a>nodejs中的模块</h4><p>一个文件就是一个模块，每个模块都有自己的作用域。我们使用var来声明的变量并不是全局的，而是属于当前模块下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">## index.js</div><div class="line">var a = 100;</div><div class="line">global.a = 200;</div><div class="line">console.log(a);   //100</div></pre></td></tr></table></figure>
+<h4 id="filename"><a href="#filename" class="headerlink" title="__filename:"></a>__filename:</h4><p>当前文件被解析过后的绝对路径。<code>eg: e:/web/index.js</code></p>
+<p>该属性并非全局属性，属于模块作用域</p>
+<h4 id="dirname"><a href="#dirname" class="headerlink" title="__dirname"></a>__dirname</h4><p>当前文件所在目录被解析过后的绝对路径。<code>eg: e:/web</code></p>
+<p>该属性并非全局属性，属于模块作用域</p>
+<h4 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h4><p>绝对路径</p>
+<p>相对路径：不加.的话是加载核心模块；./相同目录下的</p>
+<p>首先按照加载的模块的文件名称查找，如果没找到会在模块名称后加上.js的后缀进行查找</p>
+<p>require(“./3”)–&gt;是否有3–&gt;是否有3.js–&gt;3.json–&gt;3.node</p>
+<h3 id="process"><a href="#process" class="headerlink" title="process"></a>process</h3><p>是一个全局对象:<code>process==global.process</code>, 对当前运行的程序的进程进行访问和控制</p>
+<p>返回的是module.exports</p>
+<p>node.js：单线程 异步 驱动</p>
+<p>php运行：本身不支持多线程，服务器Apache支持：初始化150个线程给php ,一万人访问，去线程池拿线程，用完放回，别人再拿</p>
+<p>nodejs运行：单线程，那一万人访问怎么办？采用异步的方式</p>
+<p>第一个人操作DB，就在内存中开辟一块空间，主线程到第二个人，上传</p>
+<p>async</p>
+<p> 框架：express，koa，hapi</p>
+<p>assert模块提供了一系列的断言测试</p>
+<p><code>assert.equal(actual, expected[, message])</code></p>
+<p>判断实际值 <code>actual</code> 和期望值 <code>expected</code> 是否相等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/09/nodejs/" data-id="cj4c46zoe000du42yiucnwxqv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/09/Bootstrap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/08/Express/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

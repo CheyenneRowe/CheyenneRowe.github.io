@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动web | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iphone5为例：  说的640dp*1136dp指的是物理像素，而实际上实际开发用的是逻辑像素（px，浏览器使用的抽象单位） dp，pt：设备无关像素，是固定的，不像逻辑像素可大可小。  这两者的关系是用dpr：设备像素缩放比 1px = (dpr)平方*dp以dpr=2举例： 平面上：1px = 4dp 长度来说：1px = 2dp 所以，iphone5声称的640dp*1136dp也就是实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动web">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/移动web/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="iphone5为例：  说的640dp*1136dp指的是物理像素，而实际上实际开发用的是逻辑像素（px，浏览器使用的抽象单位） dp，pt：设备无关像素，是固定的，不像逻辑像素可大可小。  这两者的关系是用dpr：设备像素缩放比 1px = (dpr)平方*dp以dpr=2举例： 平面上：1px = 4dp 长度来说：1px = 2dp 所以，iphone5声称的640dp*1136dp也就是实">
+<meta property="og:updated_time" content="2017-05-12T13:01:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动web">
+<meta name="twitter:description" content="iphone5为例：  说的640dp*1136dp指的是物理像素，而实际上实际开发用的是逻辑像素（px，浏览器使用的抽象单位） dp，pt：设备无关像素，是固定的，不像逻辑像素可大可小。  这两者的关系是用dpr：设备像素缩放比 1px = (dpr)平方*dp以dpr=2举例： 平面上：1px = 4dp 长度来说：1px = 2dp 所以，iphone5声称的640dp*1136dp也就是实">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动web" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/11/移动web/" class="article-date">
+  <time datetime="2017-05-11T02:05:09.000Z" itemprop="datePublished">2017-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动web
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iphone5为例：</p>
+<ol>
+<li>说的<code>640dp*1136dp</code>指的是物理像素，而实际上实际开发用的是逻辑像素（px，浏览器使用的抽象单位）</li>
+<li>dp，pt：设备无关像素，是固定的，不像逻辑像素可大可小。</li>
+</ol>
+<p>这两者的关系是用dpr：设备像素缩放比</p>
+<h3 id="1px-dpr-平方-dp"><a href="#1px-dpr-平方-dp" class="headerlink" title="1px = (dpr)平方*dp"></a>1px = (dpr)平方*dp</h3><p>以dpr=2举例：</p>
+<p>平面上：1px = 4dp</p>
+<p>长度来说：1px = 2dp</p>
+<p>所以，iphone5声称的640dp*1136dp也就是实际开发的320px*568px</p>
+<h3 id="dpi-amp-ppi"><a href="#dpi-amp-ppi" class="headerlink" title="dpi &amp; ppi"></a>dpi &amp; ppi</h3><p>dpi：打印机每英寸可以喷的墨汁点</p>
+<p>ppi：屏幕每英寸内有多少像素渲染，也就是单位英寸内的像素密度</p>
+<p>以iPhone 5为例，需要用物理像素去算</p>
+<p>ppi=[（1136² + 640²）/4 (英寸) ]开方 = 326ppi  (视网膜retina屏幕，dpr大于 等于2)</p>
+<p>ppi越高，像素数越高，图像越清晰（图像有更多的像素去渲染）</p>
+<h4 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h4><p> iOS：viewport是980px（在980px的视口上渲染无误，在移动端缩放）</p>
+<p>Android：不确定，可能是1640,1200？</p>
+<ol>
+<li>layout viewport：布局viewport，980px</li>
+<li>visual viewport：度量viewport，缩放后的网页宽度</li>
+</ol>
+<h3 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document.body.clientWidth：布局viewport    //书的大小</div><div class="line">window.innerWidth：度量viewport  缩放后大小：当前屏幕可视区域下展示了多少像素 放大镜</div></pre></td></tr></table></figure>
+<p>div：320*568px， 默认viewport是980px，也就是320布局在980的页面上，只能显示一部分</p>
+<p>最佳：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width，initial-scale=1，user-scalable = no&quot;&gt;</div></pre></td></tr></table></figure>
+<p>width=device-width   布局viewport=设备宽度</p>
+<p>initial-scale=1    度量viewport = 布局viewport </p>
+<p>document.body.clientWidth：320<br>window.innerWidth：320</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/11/移动web/" data-id="cj4c46zoy000pu42y58dcetbq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/13/重绘-回流是什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          重绘&amp;回流是什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/09/Bootstrap/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

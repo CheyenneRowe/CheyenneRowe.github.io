@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo配置过程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一次搭建Hexo，总结一下整个过程：  环境搭建  安装Node.js：Hexo是一款基于Node.js的静态博客框架，可以用来生成静态页面 安装git：把本地的hexo内容push到github上去git的具体使用可以参见廖雪峰的博客，写得很详细 申请github账号   安装搭建Hexo  安装Hexo进入gitbash执行以下命令：$ npm install -g hexo安装hexo插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo配置过程">
+<meta property="og:url" content="http://yoursite.com/2017/01/09/Hexo配置过程/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一次搭建Hexo，总结一下整个过程：  环境搭建  安装Node.js：Hexo是一款基于Node.js的静态博客框架，可以用来生成静态页面 安装git：把本地的hexo内容push到github上去git的具体使用可以参见廖雪峰的博客，写得很详细 申请github账号   安装搭建Hexo  安装Hexo进入gitbash执行以下命令：$ npm install -g hexo安装hexo插件">
+<meta property="og:updated_time" content="2017-03-30T06:40:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo配置过程">
+<meta name="twitter:description" content="第一次搭建Hexo，总结一下整个过程：  环境搭建  安装Node.js：Hexo是一款基于Node.js的静态博客框架，可以用来生成静态页面 安装git：把本地的hexo内容push到github上去git的具体使用可以参见廖雪峰的博客，写得很详细 申请github账号   安装搭建Hexo  安装Hexo进入gitbash执行以下命令：$ npm install -g hexo安装hexo插件">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo配置过程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/09/Hexo配置过程/" class="article-date">
+  <time datetime="2017-01-09T12:19:19.000Z" itemprop="datePublished">2017-01-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo配置过程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一次搭建Hexo，总结一下整个过程：</p>
+<blockquote>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3></blockquote>
+<ol>
+<li>安装<code>Node.js</code>：<br>Hexo是一款基于<code>Node.js</code>的静态博客框架，可以用来生成静态页面</li>
+<li>安装<code>git</code>：把本地的hexo内容push到github上去<br>git的具体使用可以参见<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰</a>的博客，写得很详细</li>
+<li>申请github账号</li>
+</ol>
+<blockquote>
+<h3 id="安装搭建Hexo"><a href="#安装搭建Hexo" class="headerlink" title="安装搭建Hexo"></a>安装搭建Hexo</h3></blockquote>
+<ol>
+<li>安装Hexo<br>进入<code>gitbash</code>执行以下命令：<br><code>$ npm install -g hexo</code><br>安装hexo插件，可以让hexo通过<code>git</code>发布<br><code>$ npm install --save hexo-deployer-git</code></li>
+<li>创建一个Hexo项目<br>选择本地磁盘创建Hexo文件夹，进入该目录后右键<code>gitbash</code>：<br><code>$ hexo init</code><br>生成静态页面<br><code>$ hexo g</code><br>启动hexo服务器<br><code>$ hexo s</code><br>至此本地hexo创建成功，访问<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>即可看到漂亮的博客界面，默认监听4000端口。</li>
+</ol>
+<blockquote>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3></blockquote>
+<ol>
+<li>建立<code>Repository</code><br>在github个人主页新建repository，仓库名必须为：<strong>用户名.github.io</strong></li>
+<li><p>配置<code>_config.yml</code><br>该文件在本地磁盘创建的hexo目录下，翻到最底部，修改如下（注意冒号后的空格）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  type: git   #有的版本是github也是个小坑，注意</div><div class="line">  repository: https://github.com/CheyenneRowe/CheyenneRowe.github.io.git</div><div class="line">  #在github仓库中直接复制过来，换成自己的</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改后执行：<br><code>$ hexo d</code><br>执行完毕后访问<strong>用户名.github.io</strong>即可看到部署在github上的默认博客，第一次发布可能会有10分钟的延迟。</p>
+<p><strong>到这里，你的hexo博客就建好啦~~</strong></p>
+</li>
+</ol>
+<blockquote>
+<h3 id="在博客中添加文章："><a href="#在博客中添加文章：" class="headerlink" title="在博客中添加文章："></a>在博客中添加文章：</h3></blockquote>
+<ol>
+<li>新建文章：<br><code>$ hexo new &quot;文章名&quot;</code></li>
+<li>在本地hexo目录–&gt;source–&gt;_posts下出现了“文章名.md”，使用<code>notepad++</code>打开，用<code>markdown</code>语法写完保存。</li>
+<li>gitbash中执行：<br><code>$ hexo g -d</code> #生成静态页面，部署到<code>github</code><br><code>$ hexo s</code> #启动server</li>
+</ol>
+<blockquote>
+<p>访问github个人主页，结束！<br>ps:这里贴一个<a href="http://www.tuicool.com/articles/zeIZJzv" target="_blank" rel="external">替换hexo主题</a>的帖子，祝顺利啦~</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/09/Hexo配置过程/" data-id="cj4c46zny0004u42ybnweaucm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/13/Doctype、标准模式与兼容模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Doctype、标准模式与兼容模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/03/html5中一般的结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">html5中一般的结构</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

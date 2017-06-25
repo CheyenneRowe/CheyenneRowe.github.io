@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>原型链里那些奇怪的对象属性都是什么 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="总结一下原型链里的一些基本概念： 首先我们要明确prototype和__proto__：  每个函数都有一个原型对象属性：prototype，它包含两个成员属性：constructor&amp;amp;__proto__  每个对象都有一个隐藏的__proto__属性，它引用了创建该对象的函数的prototype，即： foo.__proto__ === Foo.prototype，这里的__proto_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型链里那些奇怪的对象属性都是什么">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/原型链看这一篇就够了/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="总结一下原型链里的一些基本概念： 首先我们要明确prototype和__proto__：  每个函数都有一个原型对象属性：prototype，它包含两个成员属性：constructor&amp;amp;__proto__  每个对象都有一个隐藏的__proto__属性，它引用了创建该对象的函数的prototype，即： foo.__proto__ === Foo.prototype，这里的__proto_">
+<meta property="og:image" content="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/%E5%8E%9F%E5%9E%8B%E9%93%BE.png">
+<meta property="og:updated_time" content="2017-04-01T07:06:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原型链里那些奇怪的对象属性都是什么">
+<meta name="twitter:description" content="总结一下原型链里的一些基本概念： 首先我们要明确prototype和__proto__：  每个函数都有一个原型对象属性：prototype，它包含两个成员属性：constructor&amp;amp;__proto__  每个对象都有一个隐藏的__proto__属性，它引用了创建该对象的函数的prototype，即： foo.__proto__ === Foo.prototype，这里的__proto_">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/%E5%8E%9F%E5%9E%8B%E9%93%BE.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-原型链看这一篇就够了" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/29/原型链看这一篇就够了/" class="article-date">
+  <time datetime="2017-03-29T06:41:38.000Z" itemprop="datePublished">2017-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原型链里那些奇怪的对象属性都是什么
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结一下原型链里的一些基本概念：</p>
+<p><strong>首先</strong>我们要明确<code>prototype</code>和<code>__proto__</code>：</p>
+<ul>
+<li><p>每个函数都有一个<strong>原型对象</strong>属性：<code>prototype</code>，它包含两个成员属性：<code>constructor</code>&amp;<code>__proto__</code></p>
+</li>
+<li><p>每个对象都有一个隐藏的<code>__proto__</code>属性，它引用了创建该对象的函数的<code>prototype</code>，即：</p>
+<p><code>foo.__proto__ === Foo.prototype</code>，这里的<code>__proto__</code>成为”隐式原型”。</p>
+</li>
+</ul>
+<h4 id="自定义函数的prototype"><a href="#自定义函数的prototype" class="headerlink" title="自定义函数的prototype"></a>自定义函数的prototype</h4><p>我们已经说过自定义函数都有一个原型对象属性，那 <code>Foo.prototype</code>就应该也有<code>__proto__</code>属性才对，那它的<code>__proto__</code>又是什么呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function Foo()&#123;&#125;</div><div class="line">Foo.prototype.__proto__ === Object.prototype;</div></pre></td></tr></table></figure>
+<p>自定义函数<code>Foo</code>的<code>prototype</code>本质上跟<code>var obj= {}</code>一样都是被<code>Object</code>创建的，所以它的<code>__proto__</code>指向<code>Object.prototype</code></p>
+<h4 id="自定义函数的-proto"><a href="#自定义函数的-proto" class="headerlink" title="自定义函数的__proto__"></a>自定义函数的<code>__proto__</code></h4><p>自定义函数也是一种对象呀，所以它肯定也有<code>__proto__</code>属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function Foo()&#123;&#125;</div><div class="line">Foo.__proto__ === Function.prototype;</div></pre></td></tr></table></figure>
+<p>为什么呢？想想一般我们怎么创建函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Foo(x,y)&#123;</div><div class="line">	return x+y;</div><div class="line">&#125;</div><div class="line">或者（虽然下面这种方式我们不推荐）：</div><div class="line">var Foo = new Function(&quot;x&quot;,&quot;y&quot;,&quot;return x+y;&quot;)</div></pre></td></tr></table></figure>
+<p>可以看出，函数<code>Foo</code>是被<code>Function</code>创建出来的，所以<code>Foo</code>的<code>__proto__</code>指向<code>Function</code>的<code>prototype</code></p>
+<p>同理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.__proto__ === Function.prototype</div></pre></td></tr></table></figure>
+<h4 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h4><p>再看一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj  = &#123;&#125;;  // obj本质上是被Object函数创建的, var obj = new Object();</div><div class="line">obj.__proto__ === Object.prototype;</div></pre></td></tr></table></figure>
+<p>同样，<code>Object.prototype</code>也是一个对象，那么它的<code>__proto__</code>对象又是什么呢？</p>
+<p>这里需要注意的是：<strong><code>Object.prototype</code>的<code>__proto__</code>指向的是<code>null</code></strong></p>
+<h4 id="Object的-proto"><a href="#Object的-proto" class="headerlink" title="Object的__proto__"></a>Object的__proto__</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.__proto__ === Function.prototype</div></pre></td></tr></table></figure>
+<p>最后贴一张图：</p>
+<p><img src="https://raw.githubusercontent.com/CheyenneRowe/ImgForBlog/master/%E5%8E%9F%E5%9E%8B%E9%93%BE.png" alt="原型链"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/29/原型链看这一篇就够了/" data-id="cj4c46zon000ju42y9pb63yfv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/07/为什么说js中的Dom操作很慢/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          为什么说js中的Dom操作很慢
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/28/JS构造函数知多少/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS构造函数知多少</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

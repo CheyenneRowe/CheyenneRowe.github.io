@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MongoDB | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。 123456789101112131415show dbsuse demodb.dropDatabase()db.createCollection(&amp;quot;user&amp;quot;)show collectionsuser = db.getColle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="http://yoursite.com/2017/04/26/MongoDB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。 123456789101112131415show dbsuse demodb.dropDatabase()db.createCollection(&amp;quot;user&amp;quot;)show collectionsuser = db.getColle">
+<meta property="og:updated_time" content="2017-05-10T02:49:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:description" content="MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。 123456789101112131415show dbsuse demodb.dropDatabase()db.createCollection(&amp;quot;user&amp;quot;)show collectionsuser = db.getColle">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/MongoDB/" class="article-date">
+  <time datetime="2017-04-26T03:26:09.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MongoDB
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MongoDB使用集合（collection）和文档（document）来描述和存储数据，collection就相当于表，document相当于行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">show dbs</div><div class="line">use demo</div><div class="line">db.dropDatabase()</div><div class="line">db.createCollection(&quot;user&quot;)</div><div class="line">show collections</div><div class="line">user = db.getCollection(&quot;user&quot;)</div><div class="line">user.insert(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find(&#123;name:&quot;cheyenne&quot;&#125;)</div><div class="line">user.find();//找到全部记录</div><div class="line">user.remove(&#123;name:&quot;ss&quot;&#125;)</div><div class="line">user.drop()</div><div class="line">//更新集合中的文档</div><div class="line">user.save(&#123;_id:ObjectId(&quot;55cc25b360bcee730bafd2bf&quot;),name:&quot;ZhangSan&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;name:&quot;ZhangSan&quot;,password:&quot;567890&quot;&#125;)</div><div class="line">user.update(&#123;name:&quot;ZhangSan&quot;&#125;,&#123;$set: &#123;password:&quot;567890&quot;&#125;&#125;);//$set设置字段的值</div></pre></td></tr></table></figure>
+<p>nodejs有针对MongoDB的数据库驱动：mongodb</p>
+<h3 id="Mongoose"><a href="#Mongoose" class="headerlink" title="Mongoose"></a>Mongoose</h3><h4 id="创建一个连接"><a href="#创建一个连接" class="headerlink" title="创建一个连接"></a>创建一个连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(&apos;mongoose&apos;);</div><div class="line">mongoose.connect(&apos;mongodb://localhost/test&apos;);</div><div class="line"></div><div class="line">var db = mongoose.connection;</div><div class="line">db.on(&apos;error&apos;, console.error.bind(console, &apos;connection error:&apos;));</div><div class="line">db.once(&apos;open&apos;, function() &#123;</div><div class="line">  console.log(&quot;we&apos;re connected!&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>在Mongoose中，一切都是从Schema中衍生出来的，schema可以理解为表结构的定义，每个Schema会映射到mongodb的一个collection，它不具备操作数据库的能力。</p>
+<p>定义好了Schema，接下来由Schema生成Model。</p>
+<p>将Schema编译成Model，Model是一个类，每一条数据都是一个对象，它拥有在Schema中定义的属性和方法，可以对数据库操作。</p>
+<blockquote>
+<p>内置的Promises</p>
+</blockquote>
+<p>Mongoose的异步操作，比如：.save()和查询</p>
+<p>为了向后兼容，Mongoose4默认返回一个mpromise。</p>
+<p>Mongoose queries不是一个promise对象，但它确实有个.then()方法</p>
+<p>mongoose构建在mongodb上，提供了Schema、Model和Document对象，用起来更为方便。</p>
+<p>我们可以用Schema对象定义文档的结构（类似表结构），可以定义字段和类型、唯一性、索引和验证。Model对象表示集合中的所有文档。Document对象作为集合中的单个文档的表示。mongoose还有Query和Aggregate对象，Query实现查询，Aggregate实现聚合。</p>
+<h3 id="Nodejs连接MongoDB"><a href="#Nodejs连接MongoDB" class="headerlink" title="Nodejs连接MongoDB"></a>Nodejs连接MongoDB</h3><p>nodejs连接mongodb时，mongodb://localhost:27011/myproject1连接字符串中最后的表名如果在数据库里不存在会自动创建，如果没有指定数据库则MongoClient使用默认的<code>test</code>数据库</p>
+<h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var insertDocuments = function(db, callback) &#123;</div><div class="line">  // Get the documents collection</div><div class="line">  var collection = db.collection(&apos;documents&apos;);</div><div class="line">  // Insert some documents</div><div class="line">  collection.insertMany([</div><div class="line">    &#123;a : 1&#125;, &#123;a : 2&#125;, &#123;a : 3&#125;</div><div class="line">  ], function(err, result) &#123;</div><div class="line">    assert.equal(err, null);</div><div class="line">    assert.equal(3, result.result.n);</div><div class="line">    assert.equal(3, result.ops.length);</div><div class="line">    console.log(&quot;Inserted 3 documents into the collection&quot;);</div><div class="line">    callback(result);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>insert方法返回了一个对象，有如下三个属性：</p>
+<blockquote>
+<ul>
+<li><strong>result</strong> Contains the result document from MongoDB</li>
+<li><strong>ops</strong> Contains the documents inserted with added <strong>_id</strong> fields</li>
+<li><strong>connection</strong> Contains the connection used to perform the insert</li>
+</ul>
+</blockquote>
+<p>nodejs支持所有的MongoDB身份验证机制</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/MongoDB/" data-id="cj4c46zo50007u42ywjjki08v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/26/FEQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          postman
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/26/node-formidable使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node-formidable使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 10px;">css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/js中的继承/">js中的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/页面是如何呈现的/">页面是如何呈现的</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/13/重绘-回流是什么/">重绘&amp;回流是什么</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/11/移动web/">移动web</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
