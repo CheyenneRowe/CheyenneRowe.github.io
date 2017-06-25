@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/23/垂直居中的两个方法及Flex布局/" data-id="cj4c46zop000ku42yzr61jfhj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/23/垂直居中的两个方法及Flex布局/" data-id="cj4c4j8s3000kvm2yfc1g6aze" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -181,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/21/清除浮动总结/" data-id="cj4c46zox000ou42yubtasqgh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/21/清除浮动总结/" data-id="cj4c4j8sb000ovm2y55cnnrie" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -230,7 +230,95 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/16/Manifest/" data-id="cj4c46zo30006u42y1l3lzvlp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/16/Manifest/" data-id="cj4c4j8rf0006vm2yjpksgmm7" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/20/正则表达式/" class="article-date">
+  <time datetime="2017-01-20T11:45:18.000Z" itemprop="datePublished">2017-01-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/20/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><code>\b</code>代表单词的开头或者结尾，也就是单词和空格间的位置，目标字符串的其中一部分，空格隔开。</p>
+</li>
+<li><p><code>\s</code>匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。</p>
+</li>
+<li><p><code>\w</code>匹配字母或数字或下划线</p>
+</li>
+<li><p><code>^</code>字符串开始</p>
+</li>
+<li><p><code>$</code>字符串结束</p>
+<p>​</p>
+</li>
+<li><p><code>+</code>：一个或者多个，相当于{1，}</p>
+</li>
+<li><p><code>{2}</code>: 仅2次</p>
+</li>
+<li><p><code>{1,4}</code>: 左右都包括</p>
+</li>
+<li><p><code>.</code>：任意一个字符（除换行符之外）</p>
+</li>
+<li><p><code>*</code>：<code>*</code>前的字符可以连续出现任意次。</p>
+</li>
+<li><p>用<code>\</code>来转义</p>
+</li>
+<li><p><code>?</code>: 一次或没有</p>
+</li>
+<li><p><code>[.?!]</code>匹配标点符号(<code>.</code>或<code>?</code>或<code>!</code>)</p>
+</li>
+<li><p>分枝条件|：表达式A|表达式B|表达式C，匹配其一即可。</p>
+</li>
+<li><p><code>(pattern)</code>: 匹配这个格式就可以了</p>
+</li>
+<li><p><code>(?:pattern)</code>、和上一个差不多，匹配这个pattern格式</p>
+</li>
+<li><p><code>(?=pattern)</code>、继续向正向找，如果这个后面跟着这个pattern格式，怎么把前面的那个字符拿出来，pattern中的内容不算匹配到的字符</p>
+</li>
+<li><p><code>(?!pattern)</code>和3相反，后面不跟着这个pattern格式，把前面的字符拿出来</p>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><ul>
+<li>精确查找hi：<code>\bhi\b</code></li>
+<li>匹配<code>&quot;hi 任意 Lucy&quot;</code>：<code>\bhi\b.*\bLucy\b</code></li>
+<li><code>\ba\w*\b</code>：<code>hello aA_______adafafaf</code>(匹配到的是空格后边的一段)</li>
+<li>\d+： 匹配一个或者多个连续的数字，后续随便是什么字符都可以</li>
+<li>\d+$:  匹配一个或者多个连续的数字，且必须是数字结尾</li>
+<li><code>\b\w{6}\b</code>：<code>hello _cs___</code>匹配到的是空格后边的一段</li>
+<li><code>\(?</code>: 有或者没有括号</li>
+<li>(\d{1,3}.)：子表达式，可以当做一个整体<ul>
+<li>(\d{1,3}.){3}：该子表达式重复三次</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/20/正则表达式/" data-id="cj4c4j8sb000nvm2yl3d8mx8g" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -680,95 +768,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/20/补漏/" data-id="cj4c46zoz000ru42yw3v7d4de" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/20/正则表达式/" class="article-date">
-  <time datetime="2017-01-20T11:45:18.000Z" itemprop="datePublished">2017-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/20/正则表达式/">正则表达式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p><code>\b</code>代表单词的开头或者结尾，也就是单词和空格间的位置，目标字符串的其中一部分，空格隔开。</p>
-</li>
-<li><p><code>\s</code>匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。</p>
-</li>
-<li><p><code>\w</code>匹配字母或数字或下划线</p>
-</li>
-<li><p><code>^</code>字符串开始</p>
-</li>
-<li><p><code>$</code>字符串结束</p>
-<p>​</p>
-</li>
-<li><p><code>+</code>：一个或者多个，相当于{1，}</p>
-</li>
-<li><p><code>{2}</code>: 仅2次</p>
-</li>
-<li><p><code>{1,4}</code>: 左右都包括</p>
-</li>
-<li><p><code>.</code>：任意一个字符（除换行符之外）</p>
-</li>
-<li><p><code>*</code>：<code>*</code>前的字符可以连续出现任意次。</p>
-</li>
-<li><p>用<code>\</code>来转义</p>
-</li>
-<li><p><code>?</code>: 一次或没有</p>
-</li>
-<li><p><code>[.?!]</code>匹配标点符号(<code>.</code>或<code>?</code>或<code>!</code>)</p>
-</li>
-<li><p>分枝条件|：表达式A|表达式B|表达式C，匹配其一即可。</p>
-</li>
-<li><p><code>(pattern)</code>: 匹配这个格式就可以了</p>
-</li>
-<li><p><code>(?:pattern)</code>、和上一个差不多，匹配这个pattern格式</p>
-</li>
-<li><p><code>(?=pattern)</code>、继续向正向找，如果这个后面跟着这个pattern格式，怎么把前面的那个字符拿出来，pattern中的内容不算匹配到的字符</p>
-</li>
-<li><p><code>(?!pattern)</code>和3相反，后面不跟着这个pattern格式，把前面的字符拿出来</p>
-</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><ul>
-<li>精确查找hi：<code>\bhi\b</code></li>
-<li>匹配<code>&quot;hi 任意 Lucy&quot;</code>：<code>\bhi\b.*\bLucy\b</code></li>
-<li><code>\ba\w*\b</code>：<code>hello aA_______adafafaf</code>(匹配到的是空格后边的一段)</li>
-<li>\d+： 匹配一个或者多个连续的数字，后续随便是什么字符都可以</li>
-<li>\d+$:  匹配一个或者多个连续的数字，且必须是数字结尾</li>
-<li><code>\b\w{6}\b</code>：<code>hello _cs___</code>匹配到的是空格后边的一段</li>
-<li><code>\(?</code>: 有或者没有括号</li>
-<li>(\d{1,3}.)：子表达式，可以当做一个整体<ul>
-<li>(\d{1,3}.){3}：该子表达式重复三次</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/20/正则表达式/" data-id="cj4c46zoq000lu42ywy1qwdce" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/20/补漏/" data-id="cj4c4j8se000svm2yypsfwrqa" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1219,7 +1219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/14/基础补漏/" data-id="cj4c46zow000nu42yenbtuvl1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/14/基础补漏/" data-id="cj4c4j8s4000lvm2yzx8bvkpe" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1269,7 +1269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/13/Doctype、标准模式与兼容模式/" data-id="cj4c46znw0002u42y946k59kg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/13/Doctype、标准模式与兼容模式/" data-id="cj4c4j8r60001vm2yvdetb8sa" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1340,7 +1340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/09/Hexo配置过程/" data-id="cj4c46zny0004u42ybnweaucm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/09/Hexo配置过程/" data-id="cj4c4j8r90003vm2y442j08vc" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1378,7 +1378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/03/html5中一般的结构/" data-id="cj4c46zoa000au42y2i9uksw0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/03/html5中一般的结构/" data-id="cj4c4j8ro000avm2y0fyindi5" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1402,7 +1402,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li></ul>
     </div>
@@ -1412,7 +1412,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/css/" style="font-size: 10px;">css</a>
     </div>
@@ -1431,7 +1431,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -1468,7 +1468,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
